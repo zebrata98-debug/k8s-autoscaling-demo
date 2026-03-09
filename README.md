@@ -73,8 +73,8 @@ Get the app URL
 minikube service frontend-service -n demo --url
 
 
-  test
-
+  Test
+  
 watch kubectl get pods -n demo
 
 FRONTEND_URL=$(minikube service frontend-service -n demo --url)
