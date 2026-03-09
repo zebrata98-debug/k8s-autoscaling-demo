@@ -5,27 +5,27 @@ Project layout
 k8s-autoscaling-demo/
 ├── services/
 │   ├── frontend/
-│   │   ├── index.js           # HTTP server, calls backend /compute endpoint
+│   │   ├── index.js           
 │   │   ├── package.json
 │   │   └── Dockerfile
 │   └── backend/
-│       ├── index.js           # CPU-heavy computation endpoint
+│       ├── index.js           
 │       ├── package.json
 │       └── Dockerfile
 ├── k8s/
-│   ├── namespace.yaml         # Isolates all resources in 'demo' namespace
-│   ├── configmap.yaml         # Non-sensitive config (version, log level)
-│   ├── secret.yaml            # Sensitive config (base64 encoded)
-│   ├── resource-quota.yaml    # Limits total CPU/memory/pods in namespace
+│   ├── namespace.yaml         
+│   ├── configmap.yaml         
+│   ├── secret.yaml            
+│   ├── resource-quota.yaml    
 │   ├── backend-deployment.yaml
 │   ├── backend-service.yaml
 │   ├── frontend-deployment.yaml
 │   ├── frontend-service.yaml
-│   ├── hpa-backend.yaml       # Scales backend 1-5 pods at 50% CPU
-│   ├── hpa-frontend.yaml      # Scales frontend 1-3 pods at 50% CPU
-│   └── pdb.yaml               # Ensures at least 1 backend pod stays up
+│   ├── hpa-backend.yaml       
+│   ├── hpa-frontend.yaml      
+│   └── pdb.yaml               
 └── load-test/
-    └── load-test.js           # k6 script, ramps to 100 virtual users
+    └── load-test.js           
 ```
 
 minikube start --driver=docker --cpus=2 --memory=3000
